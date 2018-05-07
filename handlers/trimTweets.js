@@ -12,9 +12,9 @@ module.exports = function(req, res) {
   
   const twitterClient = new Twitter({
     consumer_key: process.env.CONSUMER_KEY,
-    consumer_secret: process.env.CONSUMER_SECRET,
+    consumer_secret: req.body.consumerSecret,
     access_token_key: process.env.ACCESS_TOKEN_KEY,
-    access_token_secret: process.env.ACCESS_TOKEN_SECRET,
+    access_token_secret: req.body.accessTokenSecret,
   })
 
   twitterClient.get('statuses/user_timeline', {
