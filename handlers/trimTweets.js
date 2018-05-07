@@ -100,6 +100,7 @@ module.exports = function(req, res) {
       return res.send(apiResponse)
     })
     .catch(err => {
-      return res.error(err)
+      console.error(err)
+      return res.status(500).send(err)
     })
 }
