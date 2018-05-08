@@ -83,6 +83,8 @@ module.exports = function(req, res) {
             })
           })
         })
+
+        return Promise.all(deletePromises)
       }
     })
     .then((deletedTweets = []) => {
